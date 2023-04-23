@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Users</title>
+</head>
+<body>
+
+    
+    <!--Main Content-->
+    <div class="mt-5">
+        <h1 class="text-center">View Users</h1>
+        <div class="container">
+            <!--Add User Button-->
+            <div class="my-3">
+                <a href="/add"><button type="button" class="btn btn-primary">Add User</button></a>
+            </div>
+            <table class="table border" >
+                <thead>
+                  <tr>
+                    <th scope="col">CIN</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Mail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <td>{{user.cin}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.mail}}</td>
+                    <td>
+                        <div class="d-inline mx-2">
+                            <button class="btn btn-warning" (click)="updateUser(user.cin)" type="button">Update</button>
+                        </div>
+                        <div class="d-inline">
+                          <button class="btn btn-danger" (click)="deleteUser(user.cin)" type="button">Delete</button>
+                        </div>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<router-outlet></router-outlet>

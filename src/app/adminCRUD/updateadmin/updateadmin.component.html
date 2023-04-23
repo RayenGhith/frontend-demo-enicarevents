@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+<body>
+    
+
+    
+    <!--Main Content-->
+    <div class="my-5">
+      <div class="mx-auto w-25 " style="max-width:100%;">
+        <h2 class="text-center mb-3">Update User</h2>
+        <form  [formGroup]="form" (ngSubmit)="submit()" >
+
+            <!--CIN ID-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="cin" class="form-label">CIN</label>
+              <input id="cin"  formControlName="cin" type="number" name="cin" class="form-control" placeholder="CIN" required>
+            </div>
+          </div>
+          
+          <!--name-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="username" class="form-label">Name</label>
+              <input id="username"  formControlName="username" type="text" name="username" class="form-control" placeholder="Name" required>
+            </div>
+          </div>
+
+
+          <!--Email-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="mail" class="form-label">Email</label>
+              <input id="mail" type="mail"  formControlName="mail" name="mail" class="form-control" placeholder="email" required>
+            </div>
+          </div>
+
+          
+          <!--PNo-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="password" class="form-label">password</label>
+              <input id="password" type="text" name="password"  formControlName="password" class="form-control" placeholder=" PASSWORD" required>
+            </div>
+          </div>
+         
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <button [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit">Button</button>
+            </div>
+          </div>
+
+          <div>
+            
+          </div>
+        </form>
+  
+      </div>
+    </div>
+    
+</body>
+</html>
